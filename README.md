@@ -47,3 +47,15 @@ cd ../build/release
 ./run_ssb 1 db-engine-paradigms/ssb-dbgen/ 1
 ```
 if you build ssb-dbgen failed, you can copy the ```*.tbl``` from ``/root/ssb-dbgen`` in docker to your mac ``db-engine-paradigms/ssb-dbgen/`` dir
+
+## reference
+- [tbb official site](https://www.intel.com/content/www/us/en/developer/articles/release-notes/intel-threading-building-blocks-release-notes.html)
+- [install high version gcc on centos](https://linuxize.com/post/how-to-install-gcc-compiler-on-centos-7/)
+- [linux chown command](http://c.biancheng.net/view/761.html)
+- [why can we run perf in docker or vm](https://www.swift.org/server/guides/linux-perf.html)
+- [use perf in vm](https://www.cnblogs.com/azureology/p/13913540.html)
+- [run perf in docker](https://chinggg.github.io/post/docker-perf/)
+
+## TODO
+- [ ] ``make`` in ssb-dbgen on mac compiled failed
+- [ ] run perf tools in docker and collect all events.
