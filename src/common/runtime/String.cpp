@@ -1,6 +1,7 @@
 #include "common/runtime/String.hpp"
 
 using namespace std;
+typedef std::string_view STR_VIEW;
 
 inline bool fmemcmp(const char* __restrict__ left,
                     const char* __restrict__ right, uint32_t size) {
@@ -11,7 +12,7 @@ inline bool fmemcmp(const char* __restrict__ left,
    return true;
 }
 
-SmallStringView::SmallStringView(std::experimental::string_view& s) {
+SmallStringView::SmallStringView(STR_VIEW& s) {
    assign(s);
 }
 
@@ -34,7 +35,7 @@ bool operator==(const SmallStringView& lhs, const SmallStringView& rhs) {
 }
 
 bool operator==(const SmallStringView& lhs,
-                const std::experimental::string_view& rhs) {
+                const STR_VIEW& rhs) {
    auto size = lhs.size();
    if (size != rhs.size())
       return false;
@@ -67,7 +68,7 @@ void SmallStringView::assign(const char* start, uint32_t size) {
 
 void SmallStringView::assign(string& data) { assign(data.data(), data.size()); }
 
-void SmallStringView::assign(std::experimental::string_view& data) {
+void SmallStringView::assign(STR_VIEW& data) {
    assign(data.data(), data.size());
 }
 

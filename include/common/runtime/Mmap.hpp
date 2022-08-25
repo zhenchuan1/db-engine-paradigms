@@ -2,7 +2,8 @@
 #include "common/Compat.hpp"
 #include <cassert>
 #include <cstring>
-#include <experimental/string_view>
+//#include <experimental/string_view>
+#include <string_view>
 #include <fcntl.h>
 #include <iostream>
 #include <stdexcept>
@@ -210,7 +211,8 @@ void Vector<T>::writeBinary(const char* pathname, std::vector<T>& v) {
    check(close(fd) == 0);
 }
 
-typedef std::experimental::string_view str;
+//typedef std::experimental::string_view str;
+typedef std::string_view str;
 
 template <> struct Vector<str> {
    struct Data {

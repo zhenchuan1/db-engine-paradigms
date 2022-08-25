@@ -1,6 +1,7 @@
 #pragma once
 #include "Primitives.hpp"
-#include <experimental/tuple>
+//#include <experimental/tuple>
+#include <tuple>
 #include <functional>
 #include <memory>
 #include <vector>
@@ -64,8 +65,10 @@ class OpArgs<pos_t (*)(pos_t, Args...)> : public Op {
    }
 
    virtual pos_t run(pos_t n) override {
-      return std::experimental::apply(function,
-                                      std::tuple_cat(std::make_tuple(n), args));
+//      return std::experimental::apply(function,
+//                                      std::tuple_cat(std::make_tuple(n), args));
+         return std::apply(function,
+                                std::tuple_cat(std::make_tuple(n), args));
    }
 };
 
